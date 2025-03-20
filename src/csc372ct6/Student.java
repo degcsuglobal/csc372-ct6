@@ -1,7 +1,7 @@
 package csc372ct6;
 
 
-// Represents a student with a roll number, name, and address that we can compare in the other class.
+// Represents a student with a roll number (rollno), name, and address that we can compare in the other class.
 public class Student {
 	private int rollno;
 	private String name;
@@ -12,6 +12,10 @@ public class Student {
 		this.rollno = rollno;
 		this.name = name;
 		this.address = address;
+	}
+
+	public String toString() {
+		return String.format("Student: %s, %s, #%d", name, address, rollno);
 	}
 
 	public int getRollNumber() {

@@ -7,30 +7,30 @@ public class SelectionSortDriver {
 	public static void main(String[] args) {
 		// Make an example ArrayList of students 
 		Student[] students = {
-			new Student("Bob McFakeName Jr.", "123 Fake St", 123),
+			new Student("Whitey Bulger", "1234 Alcatraz Avenue", 13512),
+			new Student("Bob McFakeName Jr.", "123 Fake St", 125113),
 			new Student("Pauly Shore", "123 Fake St", 124),
 			new Student("Milli Vanilli", "456 Outtamy Way", 1337),
 			new Student("Joe the Plumber", "789 Joe St", 128),
 			new Student("Vanilla Ice", "789 Joe St", 666),
 			new Student("Guy Fieri", "456 Outtamy Way", 130),
+			new Student("Sarah Palin", "457 Outtamy Way", 2),
 			new Student("Tommy Wiseau", "789 Middle Chicken Road", 131),
-			new Student("Whitey Bulger", "1234 Alcatraz Avenue", 13512),
 			new Student("Jenny", "512 Park Ave", 8675309),
 		};
+		
+		// Sort them and print out the lists 
+		// (using the toString method) 
 
 		// Sort by name
 		System.out.println("Okay, we're going to sort by name:");
 		selectionSort(students, new StudentNameComparator());
-		for (Student student : students) {
-			System.out.println(student.getName());
-		}
+		printStudentList(students);
 
 		// Sort by rollno 
-		System.out.println("All right people, now we're going to sort by rollno:");
+		System.out.println("\nAll right people, now we're going to sort by rollno:");
 		selectionSort(students, new StudentRollNumberComparator());
-		for (Student student : students) {
-			System.out.println(student.getRollNumber());
-		}
+		printStudentList(students);
 	}
 
 	// Use selection sort to sort the passed array in place. 
@@ -49,6 +49,13 @@ public class SelectionSortDriver {
 			Student temp = students[i];
 			students[i] = students[minIndex];
 			students[minIndex] = temp;
+		}
+	}
+
+	// Helper to print out a list of students
+	private static void printStudentList(Student[] students) {
+		for (Student student : students) {
+			System.out.println(student);
 		}
 	}
 
